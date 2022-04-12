@@ -1,0 +1,13 @@
+.icon {
+    padding: 5px;
+    color: darkgrey;
+}
+
+.icon:hover {
+    cursor: pointer;
+}
+
+.menu {
+    position: fixed;
+    right: 0px;
+}

@@ -1,0 +1,35 @@
+<div class="select-div" *ngIf="playersArray">
+    <form [formGroup]="form">
+        <!-- <mat-form-field appearance="fill">
+            <mat-label>Player...</mat-label>
+            <input
+                matInput
+                class="player-select" 
+                id="player-select"  
+                name="selectedPlayer"
+                [formControl]="control"
+                formControlName="selectedPlayer"
+                [matAutocomplete]="auto">
+            <mat-error *ngIf="form.invalid">Please select a player...</mat-error>
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFunction">
+                <mat-option *ngFor="let player of playersArray" [value]="player.name">
+                    {{ player.name }}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field> -->
+        <mat-form-field>
+            <input type="text" matInput class="player-select" [formControl]="control" formControlName="selectedPlayer" [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFunction">
+                <mat-option *ngFor="let player of filteredPlayersArray" [value]="player">
+                    {{ player.name }}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+        <button type="submit" class="submit-btn" (click)="onSubmit()" [disabled]="winner || form.invalid">SUBMIT</button>
+    </form>
+    <br>
+    <p>You have five guesses to guess the Premier League player!</p>
+    <p>You have used ({{ guesses.length }}) out of (5) guesses</p>
+    <form>
+    </form>
+</div>

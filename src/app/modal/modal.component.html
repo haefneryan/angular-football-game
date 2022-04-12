@@ -1,0 +1,17 @@
+<div class="winner-modal-background">
+    <div class="winner-container">
+        <div *ngIf="message === true">
+            <div>
+                <h3 class="message">YOU WIN!</h3>
+                <p class="message">You guessed {{ answer.name }} in ({{ guesses.length }}) guesses</p>
+            </div>
+        </div>
+        <div *ngIf="message === false">
+            <div>
+                <h3 class="message">YOU LOSE!</h3>
+                <p class="message">The correct answer was {{ answer.name }}</p>
+            </div>
+        </div>
+        <button class="clear-winner" (click)="clearModal()">OK</button>
+    </div>
+</div>

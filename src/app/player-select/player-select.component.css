@@ -1,0 +1,39 @@
+.select-div {
+    width: 80vw;
+    margin: 0 auto;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+mat-form-field {
+    margin: 2rem;
+    width: 50%;
+}
+
+.submit-btn {
+    background-color: darkred;
+    color: white;
+    padding: 1rem;
+    border-radius: .5rem;
+    height: 30%;
+}
+
+.submit-btn:hover {
+    cursor: pointer;
+}
+
+.submit-btn:disabled {
+    cursor: not-allowed;
+}
+
+.ng-invalid .ng-touched select {
+    border: 1px solid red;
+}
+
+p {
+    text-align: center;
+}
