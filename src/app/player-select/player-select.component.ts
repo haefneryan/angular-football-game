@@ -8,9 +8,6 @@ import {
   Validators,
 } from '@angular/forms';
 
-import { Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
-
 @Component({
   selector: 'app-player-select',
   templateUrl: './player-select.component.html',
@@ -41,8 +38,9 @@ export class PlayerSelectComponent implements OnInit {
   }
 
   private _filter(value: string) {
+    const filterValue = value.toLowerCase();
     this.filteredPlayersArray = this.playersArray.filter((player) => {
-      return player.name.toLowerCase().includes(value);
+      return player.name.toLowerCase().includes(filterValue);
     });
   }
 
