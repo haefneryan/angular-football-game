@@ -1,4 +1,4 @@
-<div>
+<div class="test">
     <!-- <table class="table"> -->
     <table class="table" *ngIf="guesses.length > 0">
         <tr class="row header-row">
@@ -10,13 +10,6 @@
             <th>AGE</th>
             <!-- <th class="small-col">#</th> -->
         </tr>
-        <!-- <tr>
-            <td><img [src]="answer.crest" [alt]="answer.name" class="crest"></td>
-            <td>{{ answer.name }}</td>
-            <td>{{ answer.nationality }}</td>
-            <td>{{ answer.position }}</td>
-            <td>{{ answer.age }}</td>
-        </tr> -->
         <tr *ngFor="let guess of guesses">
             <td [ngClass]="guess.club === answer.club ? 'correct' : ''">
                 <!-- {{ guess.club }} -->
@@ -25,11 +18,16 @@
             <td [ngClass]="guess.name === answer.name ? 'correct' : ''">{{ guess.name }}</td>
             <td [ngClass]="guess.nationality === answer.nationality ? 'correct' : this.checkContinent(guess.nationality) === this.checkContinent(answer.nationality) ? 'close' : ''">{{ guess.nationality }}</td>
             <td [ngClass]="guess.position === answer.position ? 'correct' : ''">{{ guess.position }}</td>
-            <!-- <td [ngClass]="guess.height === answer.height ? 'correct' : guess.height - answer.height <= 2 && guess.height - answer.height >= -2 ? 'close' : ''">
-                {{ guess.height }}
-            </td> -->
             <td [ngClass]="guess.age === answer.age ? 'correct' : guess.age - answer.age <= 2 && guess.age - answer.age >= -2 ? 'close' : ''">{{ guess.age }}</td>
-            <!-- <td [ngClass]="guess.number === answer.number ? 'correct' : guess.number - answer.number <= 2 && guess.number - answer.number >= -2 ? 'close' : ''">{{ guess.number }}</td> -->
+        </tr>
+        <tr *ngIf="loser">
+            <td [ngClass]="loser ? 'wrong' : ''">
+                <img [src]="answer.crest" [alt]="answer.name" class="crest">
+            </td>
+            <td [ngClass]="loser ? 'wrong' : ''">{{ answer.name }}</td>
+            <td [ngClass]="loser ? 'wrong' : ''">{{ answer.nationality }}</td>
+            <td [ngClass]="loser ? 'wrong' : ''">{{ answer.position }}</td>
+            <td [ngClass]="loser ? 'wrong' : ''">{{ answer.age }}</td>
         </tr>
     </table>
 </div>

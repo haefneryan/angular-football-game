@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   playersArray: PlayerInfo[] = [];
   winner: boolean = false;
   loser: boolean = false;
+  showModal: boolean = false;
   guesses: any[] = [];
   answer!: PlayerInfo;
   menuModal: boolean = false;
@@ -45,11 +46,16 @@ export class AppComponent implements OnInit {
       this.guessService.setAnswer(this.answer);
     });
     this.guessService.winner$.subscribe((res) => {
-      console.log(res);
       this.winner = res;
+      if (res === true) {
+        this.showModal = true;
+      }
     });
     this.guessService.loser$.subscribe((res) => {
       this.loser = res;
+      if (res === true) {
+        this.showModal = true;
+      }
     });
     this.guessService.guesses$.subscribe((res) => {
       this.guesses = res;

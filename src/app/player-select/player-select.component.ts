@@ -29,7 +29,6 @@ export class PlayerSelectComponent implements OnInit {
       selectedPlayer: ['', [Validators.required]],
     });
     this.guessService.winner$.subscribe((res) => {
-      console.log(res);
       this.winner = res;
     });
     this.form.get('selectedPlayer')?.valueChanges.subscribe((res) => {
@@ -37,8 +36,13 @@ export class PlayerSelectComponent implements OnInit {
     });
   }
 
-  private _filter(value: string) {
-    const filterValue = value.toLowerCase();
+  private _filter(value: string | PlayerInfo) {
+    let filterValue: string;
+    if (typeof value === 'object') {
+      filterValue = value.name.toLowerCase();
+    } else {
+      filterValue = value.toLowerCase();
+    }
     this.filteredPlayersArray = this.playersArray.filter((player) => {
       return player.name.toLowerCase().includes(filterValue);
     });
@@ -52,10 +56,10 @@ export class PlayerSelectComponent implements OnInit {
         (x) => x.name === this.form.value.selectedPlayer.name
       );
 
-      if (this.guesses.length <= 4) {
+      if (this.guesses.length <= 7) {
         this.guessService.onSubmit(this.playersArray[index]);
         this.guessService.sendGuesses();
-        this.playersArray.splice(this.form.value.selectedPlayer, 1);
+        this.playersArray.splice(index, 1);
         this.guesses = this.guessService.guesses;
       }
     }

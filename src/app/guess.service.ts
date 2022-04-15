@@ -45,7 +45,7 @@ export class GuessService {
     if (this.guesses[index].name === this.answer.name) {
       this.winner = true;
       this._winnerSource.next(true);
-    } else if (this.guesses.length === 5 && this.winner === false) {
+    } else if (this.guesses.length === 8 && this.winner === false) {
       this.loser = true;
       this._loserSource.next(true);
     }

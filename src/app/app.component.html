@@ -2,6 +2,6 @@
 <!-- <app-menu (toggleMenu)="toggleMenuModal()"></app-menu> -->
 <app-menu-modal *ngIf="menuModal" (toggleModal)="toggleMenuModal()"></app-menu-modal>
 <app-player-select [playersArray]="playersArray" [filteredPlayersArray]="playersArray"></app-player-select>
-<app-board></app-board>
-<app-modal (clear)="winner=false; loser=false" *ngIf="winner" [message]="true" [answer]="answer" [guesses]="guesses"></app-modal>
-<app-modal (clear)="winner=false; loser=false" *ngIf="loser" [message]="false" [answer]="answer" [guesses]="guesses"></app-modal>
+<app-board [winner]="winner" [loser]="loser"></app-board>
+<app-modal (clear)="showModal=false" *ngIf="showModal && winner" [message]="winner" [answer]="answer" [guesses]="guesses"></app-modal>
+<app-modal (clear)="showModal=false" *ngIf="showModal && loser" [message]="winner" [answer]="answer" [guesses]="guesses"></app-modal>

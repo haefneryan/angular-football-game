@@ -2,11 +2,16 @@
     text-align: center;
 }
 
+.test {
+    height: 60vh;
+}
+
 .table {
     width: 70vw;
     margin: 0 auto;
     border-collapse: collapse;
     margin-top: 15vh;
+    margin-bottom: 10vh;
 }
 
 td, th {
@@ -31,6 +36,10 @@ td, th {
 
 .close {
     background-color: #ffff80;
+}
+
+.wrong {
+    background-color: #ffb3b3;
 }
 
 .small-col {

@@ -1,7 +1,7 @@
 import { PlayerInfo } from './../player-info.model';
 import { FetchAllPlayersService } from './../fetch-all-players.service';
 import { GuessService } from './../guess.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import * as Continents from '../continents';
 
@@ -14,6 +14,8 @@ export class BoardComponent implements OnInit {
   guesses: any[] = [];
   answer!: PlayerInfo;
   guessesSub!: Subscription;
+  @Input() winner!: boolean;
+  @Input() loser!: boolean;
 
   constructor(private guessService: GuessService) {}
 
