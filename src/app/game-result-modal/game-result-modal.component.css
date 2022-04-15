@@ -1,4 +1,4 @@
-.winner-modal-background {
+.game-result-modal-background {
     position: fixed;
     height: 100vh;
     width: 100vw;
@@ -10,7 +10,7 @@
     align-items: center;
 }
 
-.winner-container {
+.game-result-container {
     background-color: white;
     height: 20vh;
     width: 50vw;
@@ -20,16 +20,12 @@
     align-items: center;
 }
 
-.clear-winner {
-    background-color: darkred;
-    color: white;
-    margin: 1rem;
-    padding: 1rem;
-    position: absolute;
-    right: 5px;
-    bottom: 5px;
-}
-
 .message {
     text-align: center;
+}
+
+@media screen and (max-height: 1000px){
+    .game-result-container {
+        height: 30vh;
+    }
 }

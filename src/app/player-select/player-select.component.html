@@ -1,7 +1,16 @@
 <div class="select-div" *ngIf="playersArray">
     <form [formGroup]="form">
         <mat-form-field>
-            <input type="text" matInput class="player-select" [formControl]="control" formControlName="selectedPlayer" [matAutocomplete]="auto">
+            <input
+                id="player-select"
+                type="text" 
+                matInput 
+                class="player-select" 
+                [formControl]="control" 
+                formControlName="selectedPlayer" 
+                [matAutocomplete]="auto" 
+                placeholder="select a player..."
+                >
             <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFunction">
                 <mat-option *ngFor="let player of filteredPlayersArray" [value]="player">
                     {{ player.name }}
@@ -11,8 +20,8 @@
         <button type="submit" class="submit-btn" (click)="onSubmit()" [disabled]="winner || form.invalid">SUBMIT</button>
     </form>
     <br>
-    <p>You have five guesses to guess the Premier League player!</p>
-    <p>You have used ({{ guesses.length }}) out of (8) guesses</p>
+    <p>Guess the Premier League player</p>
+    <p>({{ guesses.length }}) of (8) </p>
     <form>
     </form>
 </div>

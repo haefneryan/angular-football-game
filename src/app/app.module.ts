@@ -8,7 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { PlayerSelectComponent } from './player-select/player-select.component';
 import { BoardComponent } from './board/board.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ModalComponent } from './modal/modal.component';
+import { GameResultModalComponent } from './game-result-modal/game-result-modal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
@@ -23,7 +23,7 @@ import { MenuModalComponent } from './menu-modal/menu-modal.component';
     HeaderComponent,
     PlayerSelectComponent,
     BoardComponent,
-    ModalComponent,
+    GameResultModalComponent,
     MenuComponent,
     MenuModalComponent,
   ],

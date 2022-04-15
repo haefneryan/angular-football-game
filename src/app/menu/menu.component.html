@@ -1,5 +1,14 @@
 <div class="menu">
-    <mat-icon class="icon" (click)="onClick()">info</mat-icon>
-    <mat-icon class="icon" (click)="onClick()">leaderboard</mat-icon>
-    <mat-icon class="icon" (click)="onClick()">help_center</mat-icon>
+    <mat-icon class="icon tooltip" (click)="onClick('Information')">
+        info
+        <span class="tooltiptext">Information</span>
+    </mat-icon>
+    <mat-icon class="icon tooltip" (click)="onClick('Statistics')">
+        leaderboard
+        <span class="tooltiptext">Statistics</span>
+    </mat-icon>
+    <!-- <mat-icon class="icon tooltip" (click)="onClick('support')">
+        help_center
+        <span class="tooltiptext">Support</span>
+    </mat-icon> -->
 </div>

@@ -1,5 +1,5 @@
-<div class="winner-modal-background">
-    <div class="winner-container">
+<div class="game-result-modal-background">
+    <div class="game-result-container">
         <div *ngIf="message">
             <div>
                 <h3 class="message">YOU WIN!</h3>
@@ -12,6 +12,6 @@
                 <p class="message">The correct answer was {{ answer.name }}</p>
             </div>
         </div>
-        <button class="clear-winner" (click)="clearModal()">OK</button>
+        <button class="btn" (click)="clearModal()">OK</button>
     </div>
 </div>

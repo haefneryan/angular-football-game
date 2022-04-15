@@ -1,12 +1,12 @@
-import { PlayerInfo } from './../player-info.model';
+import { PlayerInfo } from '../player-info.model';
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-modal',
-  templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.css'],
+  selector: 'app-game-result-modal',
+  templateUrl: './game-result-modal.component.html',
+  styleUrls: ['./game-result-modal.component.css'],
 })
-export class ModalComponent implements OnInit {
+export class GameResultModalComponent implements OnInit {
   @Output() public clear = new EventEmitter();
   @Input() message!: boolean;
   @Input() answer!: PlayerInfo;

@@ -8,10 +8,13 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class MenuModalComponent implements OnInit {
   @Output() toggleModal = new EventEmitter();
+  @Input() menuModalType!: string;
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.menuModalType);
+  }
 
   closeModal() {
     this.toggleModal.emit();

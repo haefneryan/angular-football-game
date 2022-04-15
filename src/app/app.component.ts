@@ -17,6 +17,7 @@ export class AppComponent implements OnInit {
   guesses: any[] = [];
   answer!: PlayerInfo;
   menuModal: boolean = false;
+  menuModalType!: string;
   url: string =
     'https://football-game-75856-default-rtdb.firebaseio.com/data.json';
 
@@ -62,7 +63,11 @@ export class AppComponent implements OnInit {
     });
   }
 
-  toggleMenuModal() {
+  toggleMenuModal(message?: string) {
+    if (message) {
+      console.log(message);
+      this.menuModalType = message;
+    }
     this.menuModal = !this.menuModal;
   }
 }

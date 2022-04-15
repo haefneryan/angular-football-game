@@ -12,7 +12,7 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onClick() {
-    this.toggleMenu.emit();
+  onClick(value: string) {
+    this.toggleMenu.emit(value);
   }
 }

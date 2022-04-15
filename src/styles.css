@@ -8,3 +8,14 @@ html, body { height: 100%; }
 body {
     margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+
+.btn {
+    background-color: darkred;
+    color: white;
+    margin: 1rem;
+    padding: 1rem;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+}

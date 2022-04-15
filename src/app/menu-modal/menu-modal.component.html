@@ -1,6 +1,21 @@
 <div class="menu-modal-backdrop">
     <div class="menu-modal">
-        <p>menu-modal works!</p>
-        <button (click)="closeModal()">CLOSE</button>
+        <h2 class="header">{{ menuModalType }}</h2>
+        <div *ngIf="menuModalType === 'Information'" class="legend-container">
+            <p>You have (8) guesses to guess the Premier League player!</p>
+            <div class="legend-option">
+                <div class="box green"></div>
+                <p>= Correct</p>
+            </div>
+            <div class="legend-option">
+                <div class="box yellow"></div>
+                <p> = Nationality - Correct Continent, wrong Country</p>
+            </div>
+            <div class="legend-option">
+                <div class="box yellow"></div>
+                <p> = Age - Within 2 years of correct</p>
+            </div>
+        </div>
+        <button class="btn" (click)="closeModal()">CLOSE</button>
     </div>
 </div>
