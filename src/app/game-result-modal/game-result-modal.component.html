@@ -1,17 +1,19 @@
 <div class="game-result-modal-background">
-    <div class="game-result-container">
-        <div *ngIf="message">
-            <div>
-                <h3 class="message">YOU WIN!</h3>
-                <p class="message">You guessed {{ answer.name }} in ({{ guesses.length }}) guesses</p>
-            </div>
-        </div>
-        <div *ngIf="!message">
-            <div>
-                <h3 class="message">YOU LOSE!</h3>
-                <p class="message">The correct answer was {{ answer.name }}</p>
-            </div>
-        </div>
-        <button class="btn" (click)="clearModal()">OK</button>
+  <div class="game-result-container">
+    <div *ngIf="message">
+      <div>
+        <h3 class="message">YOU WIN!</h3>
+        <p class="message">
+          You guessed {{ answer.name }} in ({{ guesses.length }}) guesses
+        </p>
+      </div>
     </div>
+    <div *ngIf="!message">
+      <div>
+        <h3 class="message">YOU LOSE!</h3>
+        <p class="message">The correct answer was {{ answer.name }}</p>
+      </div>
+    </div>
+    <button class="btn" (click)="clearModal()">OK</button>
+  </div>
 </div>

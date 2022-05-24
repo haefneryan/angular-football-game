@@ -1,7 +1,26 @@
 <app-header></app-header>
 <app-menu (toggleMenu)="toggleMenuModal($event)"></app-menu>
-<app-menu-modal *ngIf="menuModal" (toggleModal)="toggleMenuModal($event)" [menuModalType]="menuModalType"></app-menu-modal>
-<app-player-select [playersArray]="playersArray" [filteredPlayersArray]="playersArray"></app-player-select>
+<app-menu-modal
+  *ngIf="menuModal"
+  (toggleModal)="toggleMenuModal($event)"
+  [menuModalType]="menuModalType"
+></app-menu-modal>
+<app-player-select
+  [playersArray]="playersArray"
+  [filteredPlayersArray]="playersArray"
+></app-player-select>
 <app-board [winner]="winner" [loser]="loser"></app-board>
-<app-game-result-modal (clear)="showModal=false" *ngIf="showModal && winner" [message]="winner" [answer]="answer" [guesses]="guesses"></app-game-result-modal>
-<app-game-result-modal (clear)="showModal=false" *ngIf="showModal && loser" [message]="winner" [answer]="answer" [guesses]="guesses"></app-game-result-modal>
+<app-game-result-modal
+  (clear)="showModal = false"
+  *ngIf="showModal && winner"
+  [message]="winner"
+  [answer]="answer"
+  [guesses]="guesses"
+></app-game-result-modal>
+<app-game-result-modal
+  (clear)="showModal = false"
+  *ngIf="showModal && loser"
+  [message]="winner"
+  [answer]="answer"
+  [guesses]="guesses"
+></app-game-result-modal>
