@@ -1,4 +1,4 @@
-import { FetchDataService } from './../../../angular-football-tables/src/app/fetch-data.service';
+import { FetchAllPlayersService } from './fetch-all-players.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -38,7 +38,7 @@ import { MenuModalComponent } from './menu-modal/menu-modal.component';
     MatAutocompleteModule,
     MatFormFieldModule,
   ],
-  providers: [FetchDataService],
+  providers: [FetchAllPlayersService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
