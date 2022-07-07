@@ -28,7 +28,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchAllPlayersService.getPlayers().subscribe((res) => {
-      console.log(res);
       this.data = res;
       this.data.forEach((element: any, parentIndex: number) => {
         element.squad.forEach((player: any, index: number) => {
@@ -65,7 +64,6 @@ export class AppComponent implements OnInit {
 
   toggleMenuModal(message?: string) {
     if (message) {
-      console.log(message);
       this.menuModalType = message;
     }
     this.menuModal = !this.menuModal;

@@ -22,7 +22,6 @@ export class BoardComponent implements OnInit {
   ngOnInit() {
     this.guesses = this.guessService.guesses;
     this.guessService.answer$.subscribe((res) => {
-      console.log(res);
       this.answer = res;
     });
     this.guessService.guesses$.subscribe((res) => {
